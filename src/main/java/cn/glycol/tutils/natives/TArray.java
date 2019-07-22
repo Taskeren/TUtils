@@ -2,10 +2,8 @@ package cn.glycol.tutils.natives;
 
 import static java.util.Objects.requireNonNull;
 
-import java.util.ArrayList;
 import java.util.function.Consumer;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
@@ -49,17 +47,6 @@ public class TArray {
 	@Nullable
 	public static <T> T findNonNull(T[] elements) {
 		return TObject.findNonNull(elements);
-	}
-	
-	@SuppressWarnings("unchecked")
-	@Nonnull
-	public static <T> T[] shift(T[] array) {
-		
-		if(array.length < 1) return (T[]) new Object[0];
-		ArrayList<T> al = new ArrayList<>(java.util.Arrays.asList(array));
-		al.remove(0);
-		Object[] arrayObj = al.toArray(new Object[al.size()]);
-		return (T[]) java.lang.reflect.Array.newInstance(array.getClass(), arrayObj.length);
 	}
 
 }

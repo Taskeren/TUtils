@@ -8,7 +8,7 @@ package cn.glycol.tutils.natives;
  * @since 1.0
  */
 public class TParser {
-	private TParser() {};
+	private TParser() {}
 	
 	public static Byte parseByte(String s) {
 		return parseByte(s, null);

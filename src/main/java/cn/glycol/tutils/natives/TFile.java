@@ -16,8 +16,7 @@ import java.io.IOException;
  * @since 1.0
  */
 public class TFile {
-	private TFile() {
-	}
+	private TFile() {}
 
 	/**
 	 * Create the specified file forcedly, no matter how, like destroying other
