@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.METHOD, ElementType.TYPE })
+@Target({ ElementType.METHOD, ElementType.TYPE, ElementType.FIELD })
 /**
  * Only used for auto scanner to scan the method
  * @author Taskeren
@@ -14,4 +14,6 @@ import java.lang.annotation.Target;
  */
 public @interface Sandbox {
 
+	String value() default "#Sandbox#";
+	
 }
