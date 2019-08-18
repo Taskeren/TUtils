@@ -126,7 +126,6 @@ public class TReflection {
 		Field modifiers = Field.class.getDeclaredField("modifiers");
 		modifiers.setAccessible(true);
 		if((field.getModifiers() & Modifier.FINAL) == Modifier.FINAL) {
-			System.out.println("Yes sir");
 			modifiers.setInt(field, field.getModifiers() & ~Modifier.FINAL);
 		}
 	}
