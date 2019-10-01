@@ -1,15 +1,22 @@
-package cn.glycol.tutils.tools.timer;
+package cn.glycol.tutils.timing;
 
 /**
  * This class is a timer to test the speed of some codes.
  * 
+ * <pre>
+ * Timing t = new Timing();
+ * t.start();
+ * // do something
+ * t.stop();
+ * long duration = t.duration();
+ * </pre>
+ * 
  * @author Taskeren
  * @since 1.0
  */
-public class Timer {
+public class Timing {
 
-	public Timer() {
-	}
+	public Timing() {}
 
 	private long startTime, stopTime;
 

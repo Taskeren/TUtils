@@ -6,9 +6,9 @@ import java.util.function.Consumer;
 
 import org.junit.Test;
 
-import cn.glycol.tutils.annotation.TAnnotation;
-import cn.glycol.tutils.annotation.TAnnotation.ScanResult;
-import cn.glycol.tutils.tools.timer.Timer;
+import cn.glycol.tutils.natives.TAnnotation;
+import cn.glycol.tutils.natives.TAnnotation.ScanResult;
+import cn.glycol.tutils.timing.Timing;
 
 @Debugger("welcome to Vec3d")
 @Sandbox("Tests")
@@ -75,7 +75,7 @@ public class Tests {
 	@Sandbox("SandboxTest")
 	public static class SandboxTest {
 
-		Timer timer = new Timer();
+		Timing timer = new Timing();
 
 		Runnable execution;
 

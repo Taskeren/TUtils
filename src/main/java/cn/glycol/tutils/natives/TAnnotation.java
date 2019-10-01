@@ -1,4 +1,4 @@
-package cn.glycol.tutils.annotation;
+package cn.glycol.tutils.natives;
 
 import static java.util.Objects.requireNonNull;
 
@@ -7,8 +7,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.glycol.tutils.reflections.TReflection;
 
 public class TAnnotation {
 	private TAnnotation() {
@@ -30,7 +28,7 @@ public class TAnnotation {
 		requireNonNull(annoMethod);
 
 		ArrayList<ScanResult<Method, T>> list = new ArrayList<>();
-		List<Class<?>> clses = TClassScanner.getClassFromPackage(packageName);
+		List<Class<?>> clses = TClass.findAllClass(packageName);
 		for (Class<?> cls : clses) {
 			if (annoClass == null || TReflection.getAnnotationClass(cls, annoClass) != null) {
 				// Found class
@@ -63,7 +61,7 @@ public class TAnnotation {
 		requireNonNull(annoClass);
 
 		ArrayList<ScanResult<Class<?>, T>> list = new ArrayList<>();
-		List<Class<?>> clses = TClassScanner.getClassFromPackage(packageName);
+		List<Class<?>> clses = TClass.findAllClass(packageName);
 		for (Class<?> cls : clses) {
 			T annotation;
 			if ((annotation = TReflection.getAnnotationClass(cls, annoClass)) != null) {
@@ -89,7 +87,7 @@ public class TAnnotation {
 		requireNonNull(annoField);
 
 		ArrayList<ScanResult<Field, T>> list = new ArrayList<>();
-		List<Class<?>> clses = TClassScanner.getClassFromPackage(packageName);
+		List<Class<?>> clses = TClass.findAllClass(packageName);
 		for (Class<?> cls : clses) {
 			if (annoClass == null || cls.getAnnotation(annoClass) != null) {
 				// Found class
