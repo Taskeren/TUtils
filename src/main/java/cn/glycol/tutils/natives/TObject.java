@@ -2,9 +2,6 @@ package cn.glycol.tutils.natives;
 
 import static java.util.Objects.requireNonNull;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
 /**
  * This class contains various methods
  * not found in {@link java.util.Collections}.
@@ -27,7 +24,6 @@ public class TObject {
 	 * @throws NullPointerException if the specified default is null
 	 * @return the default if the given object is null, else the given object.
 	 */
-	@Nonnull
 	public static <T> T defaultIfNull(T object, T _default) {
 		requireNonNull(_default);
 		
@@ -42,7 +38,6 @@ public class TObject {
 	 * @throws NullPointerException if the specified argument(elements) is null
 	 * @return the first non-null element in the given elements.
 	 */
-	@Nullable
 	public static <T> T findNonNull(T[] elements) {
 		requireNonNull(elements);
 		

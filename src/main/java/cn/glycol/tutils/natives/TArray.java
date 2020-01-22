@@ -4,8 +4,6 @@ import static java.util.Objects.requireNonNull;
 
 import java.util.function.Consumer;
 
-import javax.annotation.Nullable;
-
 /**
  * This class contains various methods
  * not found in {@link java.util.Arrays}.
@@ -44,7 +42,6 @@ public class TArray {
 	 * @throws NullPointerException if the specified argument(elements) is null
 	 * @return the first non-null element in the given elements.
 	 */
-	@Nullable
 	public static <T> T findNonNull(T[] elements) {
 		return TObject.findNonNull(elements);
 	}

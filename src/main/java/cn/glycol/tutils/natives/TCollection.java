@@ -4,9 +4,6 @@ import static java.util.Objects.requireNonNull;
 
 import java.util.Collection;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
 /**
  * This class contains various methods
  * not found in {@link java.util.Collections}.
@@ -31,7 +28,6 @@ public class TCollection {
 	 * @throws NullPointerException if the specified collection is null
 	 * @return the string representation of the given element.
 	 */
-	@Nonnull
 	public static String toString(Collection<?> collection) {
 		requireNonNull(collection);
 		
@@ -47,7 +43,6 @@ public class TCollection {
 	 * @return the first non-null element in the given elements.
 	 */
 	@SuppressWarnings("unchecked")
-	@Nullable
 	public static <T> T findNonNull(Collection<T> elements) {
 		return (T) TObject.findNonNull(elements.toArray());
 	}
