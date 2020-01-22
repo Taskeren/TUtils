@@ -1,8 +1,11 @@
 package cn.glycol.tutils;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class MultiLineStringBuilder {
+
+	public static final String EMPTY_LINE = "";
 
 	protected final int capacity;
 	protected final String[] lines;
@@ -20,6 +23,8 @@ public class MultiLineStringBuilder {
 		this.capacity = capacity;
 		this.lines = new String[capacity];
 		this.pointer = 0;
+
+		Arrays.fill(lines, EMPTY_LINE);
 	}
 
 	public int pointer() {
@@ -48,13 +53,13 @@ public class MultiLineStringBuilder {
 
 	public MultiLineStringBuilder substr(int beginIndex) {
 		toStringCache = null;
-		lines[pointer].substring(beginIndex);
+		lines[pointer] = lines[pointer].substring(beginIndex);
 		return this;
 	}
 
 	public MultiLineStringBuilder substr(int beginIndex, int endIndex) {
 		toStringCache = null;
-		lines[pointer].substring(beginIndex, endIndex);
+		lines[pointer] = lines[pointer].substring(beginIndex, endIndex);
 		return this;
 	}
 
@@ -105,7 +110,7 @@ public class MultiLineStringBuilder {
 		if(toStringCache == null) {
 			final StringBuilder sb = new StringBuilder();
 			for(String str : lines) sb.append(str).append("\n");
-			toStringCache = sb.toString();
+			toStringCache = sb.toString().trim();
 		}
 		return toStringCache;
 	}

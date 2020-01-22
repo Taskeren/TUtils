@@ -10,7 +10,7 @@ public class TestMultiLineStringBuilder {
 
 		final MultiLineStringBuilder sb = new MultiLineStringBuilder();
 
-		sb.append("This is line 1").append(Boolean.TRUE, 3).atLine(2).append("AtLine 2").nextLine().substr(2);
+		sb.append("This is line 0").append(Boolean.TRUE, 2).atLine(1).append("AtLine 1").nextLine().previousLine().substr(3);
 
 		System.out.println(sb);
 
